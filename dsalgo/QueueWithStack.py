@@ -1,15 +1,44 @@
-class MyQueue(object):
+class stack:
     def __init__(self):
-        None
+        self.data = []
 
-    def peek(self):
-        None
+    def push(self,value):
+        self.data.insert(0,value)
+
+    def __str__(self):
+        return str(self.data)
 
     def pop(self):
-        None
+        return self.data.pop(0)
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, item):
+        return self.data[item]
+
+    def peek(self):
+        return self.data[0]
+
+class MyQueue(object):
+    def __init__(self):
+        self.first = stack()
+        self.second = stack()
+
+    def peek(self):
+        if(len(self.second) == 0):
+            while(len(self.first) > 0):
+                self.second.push(self.first.pop())
+        return self.second.peek()
+
+    def pop(self):
+        if(len(self.second) == 0):
+            while(len(self.first) > 0):
+                self.second.push(self.first.pop())
+        self.second.pop()
 
     def put(self, value):
-        None
+        self.first.push(value)
 
 queue = MyQueue()
 t = int(input())
