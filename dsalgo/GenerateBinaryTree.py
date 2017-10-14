@@ -19,5 +19,3 @@ class GenerateTree():
             if len(values) > 0:
                 currentNode.right = values.pop(0)
                 nodeQueue.enqueue(currentNode.right)
-
-
