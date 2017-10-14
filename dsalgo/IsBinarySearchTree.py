@@ -15,4 +15,4 @@ def checkBSTUtil(node,min,max):
 
 from dsalgo.GenerateBinaryTree import GenerateTree
 testTree = GenerateTree([4,2,6,1,3,5,8])
-checkBST(testTree.root)
+print (checkBST(testTree.root))
