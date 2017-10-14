@@ -9,4 +9,10 @@ def swap_case(input):
 
     return output
 
-print(swap_case('Fanis'))
+
+list = []
+list.append(1)
+list.append(2)
+list.append(3)
+print(list.pop(0))
+print (list)
