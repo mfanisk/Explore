@@ -34,3 +34,11 @@ class BinaryMinHeap():
                 self.heapList[minChildIndex] = temp
             i = minChildIndex
 
+    def deleteMin(self):
+        minValue = self.heapList[1]
+        self.heapList[1] = self.heapList[self.currentSize]
+        self.heapList.pop()
+        self.currentSize = self.currentSize - 1
+        self.perculateDown(1)
+        return minValue
+
